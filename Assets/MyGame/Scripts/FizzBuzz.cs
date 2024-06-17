@@ -1,22 +1,22 @@
 using UnityEngine;
 using UnityEngine.UI;  
-using TMPro;  
+using TMPro;
+
 public class FizzBuzz : MonoBehaviour
 {
-  
     public TextMeshProUGUI numberText;
     public Image panelImage;
     public AudioSource richtig;
     public AudioSource falsch;
     private int randomNumber;
-    private bool correctKeyPressed = true;
+   
 
-    void Start()
+    private void Start()
     {
         GenerateRandomNumber();
     }
 
-    void Update()
+    private void Update()
     {
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
@@ -51,14 +51,12 @@ public class FizzBuzz : MonoBehaviour
         {
             Debug.Log("Richtig!");
             richtig.Play();
-            correctKeyPressed = true;
             panelImage.color = Color.green;
         }
         else
         {
             Debug.Log("Falsch!");
             falsch.Play();
-            correctKeyPressed = false;
             panelImage.color = Color.red;
         }
     }
